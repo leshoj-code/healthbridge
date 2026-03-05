@@ -214,7 +214,7 @@ def register (request):
 
                 # Display a message
                 messages.success(request, "Account created successfully")
-                return redirect('/login')
+                return redirect('login/')
             except:
                 # Display a message if the above fails
                 messages.error(request, "Username already exist")
@@ -239,7 +239,7 @@ def login_user (request):
             messages.success(request, "You are now logged in!")
             # Admin
             if user.is_superuser:
-                return redirect('/show')
+                return redirect('show/')
 
             # For Normal Users
             return redirect('/home')
